@@ -119,7 +119,13 @@ class ViewController: UIViewController {
             var viewCenter = _animationView.center
             
             // large animation
-
+            UIView.animateWithDuration(1.0, animations: { () -> Void in
+                _animationView.frame.size.width = _animationView.frame.size.width * 2
+                _animationView.frame.size.height = _animationView.frame.size.height * 2
+                _animationView.center = viewCenter
+            }) { (isTrue) -> Void in
+                self.configureAnimationView()
+            }
         }
     }
 
