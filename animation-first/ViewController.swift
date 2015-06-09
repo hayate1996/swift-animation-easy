@@ -117,6 +117,8 @@ class ViewController: UIViewController {
     {
         if let _animationView = animationView {
             var viewCenter = _animationView.center
+            
+            // large animation
             UIView.animateWithDuration(1.0, animations: { () -> Void in
                 _animationView.frame.size.width = _animationView.frame.size.width * 2
                 _animationView.frame.size.height = _animationView.frame.size.height * 2
@@ -132,6 +134,8 @@ class ViewController: UIViewController {
     {
         if let _animationView = animationView {
             var viewCenter = _animationView.center
+            
+            // small animation
             UIView.animateWithDuration(1.0, animations: { () -> Void in
                 _animationView.frame.size.width = _animationView.frame.size.width / 2
                 _animationView.frame.size.height = _animationView.frame.size.height / 2
@@ -147,6 +151,8 @@ class ViewController: UIViewController {
     {
         if animationView != nil {
             var viewCenter = self.animationView!.center
+            
+            // delete animation
             UIView.animateWithDuration(1.0, animations: { () -> Void in
                 self.animationView!.alpha = 0
                 }) { (isTrue) -> Void in
@@ -167,6 +173,8 @@ class ViewController: UIViewController {
         if let _animationView = animationView {
             _animationView.frame.origin.x = 0
             var viewCenter = _animationView.center
+            
+            // move animation
             UIView.animateWithDuration(1.0, animations: { () -> Void in
                 _animationView.frame.origin.x = self.view.frame.width - _animationView.frame.width
                 }) { (isTrue) -> Void in
