@@ -42,6 +42,11 @@ class ViewController: UIViewController {
         configureAnimationView()
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     func configureButtons()
     {
         largeButton = UIButton(frame: CGRectMake(2, 2, buttonWidth, buttonHeight))
@@ -102,6 +107,12 @@ class ViewController: UIViewController {
         return animationView
     }
     
+    
+    
+    
+    //--------- アニメーション ----------//
+    
+    // _animationViewを100x100サイズにする
     func largeAction()
     {
         if let _animationView = animationView {
@@ -116,6 +127,7 @@ class ViewController: UIViewController {
         }
     }
 
+    // _animationViewを50x50サイズにする
     func smallAction()
     {
         if let _animationView = animationView {
@@ -129,7 +141,8 @@ class ViewController: UIViewController {
             }
         }
     }
-
+    
+    // _animationViewの'alpha'を0にする
     func deleteAction()
     {
         if animationView != nil {
@@ -148,23 +161,18 @@ class ViewController: UIViewController {
         }
     }
     
+    // _animationViewのorigin.xを0->(self.view.frame.width - _animationView.frame.width)の位置に移動する
     func moveAction()
     {
         if let _animationView = animationView {
+            _animationView.frame.origin.x = 0
             var viewCenter = _animationView.center
             UIView.animateWithDuration(1.0, animations: { () -> Void in
-                _animationView.frame.origin.x = 0
-                _animationView.frame.origin.y = 0
+                _animationView.frame.origin.x = self.view.frame.width - _animationView.frame.width
                 }) { (isTrue) -> Void in
                     self.configureAnimationView()
             }
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 }
 
