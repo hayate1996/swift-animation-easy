@@ -119,13 +119,7 @@ class ViewController: UIViewController {
             var viewCenter = _animationView.center
             
             // large animation
-            UIView.animateWithDuration(1.0, animations: { () -> Void in
-                _animationView.frame.size.width = _animationView.frame.size.width * 2
-                _animationView.frame.size.height = _animationView.frame.size.height * 2
-                _animationView.center = viewCenter
-            }) { (isTrue) -> Void in
-                self.configureAnimationView()
-            }
+
         }
     }
 
@@ -136,13 +130,7 @@ class ViewController: UIViewController {
             var viewCenter = _animationView.center
             
             // small animation
-            UIView.animateWithDuration(1.0, animations: { () -> Void in
-                _animationView.frame.size.width = _animationView.frame.size.width / 2
-                _animationView.frame.size.height = _animationView.frame.size.height / 2
-                _animationView.center = viewCenter
-                }) { (isTrue) -> Void in
-                    self.configureAnimationView()
-            }
+
         }
     }
     
@@ -153,13 +141,7 @@ class ViewController: UIViewController {
             var viewCenter = self.animationView!.center
             
             // delete animation
-            UIView.animateWithDuration(1.0, animations: { () -> Void in
-                self.animationView!.alpha = 0
-                }) { (isTrue) -> Void in
-                    self.animationView?.removeFromSuperview()
-                    self.animationView = nil
-                    self.deleteButton.setTitle("Add", forState: .Normal)
-            }
+
         }
         else {
             configureAnimationView()
@@ -175,11 +157,7 @@ class ViewController: UIViewController {
             var viewCenter = _animationView.center
             
             // move animation
-            UIView.animateWithDuration(1.0, animations: { () -> Void in
-                _animationView.frame.origin.x = self.view.frame.width - _animationView.frame.width
-                }) { (isTrue) -> Void in
-                    self.configureAnimationView()
-            }
+
         }
     }
 }
